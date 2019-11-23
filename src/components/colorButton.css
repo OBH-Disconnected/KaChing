@@ -1,0 +1,15 @@
+.button{
+    background: #FAFAFA;
+    border:2px solid rgba(112, 112, 112, 0.2);
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width:6rem;
+    height: 2rem;
+}
+.button:hover{
+    background:  rgba(28,234,176,1);
+    cursor: pointer;
+
+}
