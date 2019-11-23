@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import "./Main.css"
+import Mapa from "./Mapa"
+import Przelew from "./Mapa"
+import Subscription from "./Mapa"
 
 class Main extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state={
       display: "none",
-      accountNumber: ""
+      accountNumber: "",
+      showMapa: "none"
     }
   }
   changeDiv = () =>{
@@ -26,10 +30,25 @@ class Main extends Component {
       display:"none"
     })
   }
+  showMap = () =>{
+    this.setState({showMapa:"block"})
+  }
+  hideMap = () =>{
+    this.setState({showMapa: "none"})
+  }
   render() {
     return (
-      <div> 
-        <Button onClick={this.changeDiv}>ADD ACCOUNT</Button>
+      <div>
+      <div className='row' style={{justifyContent: 'space-around'}}>
+        <Button className="tile2" onClick={this.showMap}>SUBSCRIPTIONS</Button>
+        <Button className="tile2" onClick={this.changeDiv}>YOUR ACCOUNT BALANCE</Button>
+        <Button className="tile2" onClick={this.showMap}>SHOW LOCATIONS</Button>
+        </div>
+        <div className="row" style={{justifyContent: 'space-around'}}>
+        <Button className="tile2" onClick={this.changeDiv}>TRANSFER MONEY</Button>
+        <Button className="tile2" onClick={this.changeDiv}>ADD RECEIPT</Button>
+        <Button className="tile2" onClick={this.changeDiv}>SAVE MONEY AUTOMATICLY</Button>
+        </div>
         <div className="overlay" style={{display: this.state.display}}>
         <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId="formLogin">
@@ -41,6 +60,10 @@ class Main extends Component {
             </Button>
             <Button onClick={this.closeForm}>Close</Button>
           </Form>
+        </div>
+        <div className="overlay-mapa" style={{display: this.state.showMapa}}>
+        <Button className="buttonmapa" onClick={this.hideMap}>Close</Button>
+        <Mapa />
         </div>
       </div>
     );

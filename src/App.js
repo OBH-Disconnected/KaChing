@@ -17,7 +17,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      logged: false
+      logged: false,
+      showMapa:false,
+      subs:false,
+      przelew:false,
     };
   }
   loginUser = () =>{
@@ -31,7 +34,7 @@ class App extends Component {
       <Navbar bg="light" variant="light">
               <Link to="/" className="nav-link">Main</Link>
               <Link to="/about" className="nav-link">About</Link>
-              <Link to="/users" className="nav-link">Users</Link>
+              <Link to="/users"  className="nav-link">Users</Link>
         </Navbar>
 
         {/* A <Switch> looks through its children <Route>s and
