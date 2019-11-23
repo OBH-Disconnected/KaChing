@@ -28,7 +28,7 @@ class Login extends Component {
   render() {
     return (
       <div className='background'>
-        <div className='tile'>
+        <div  className='tile'>
           <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId="formLogin">
               <Form.Label>Login</Form.Label>
@@ -47,5 +47,4 @@ class Login extends Component {
     );
   }
 }
-
 export default Login;

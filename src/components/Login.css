@@ -9,14 +9,18 @@ body{
   display: flex;
   justify-content: center;
 }
+
 .tile{
   background: #FAFAFA;
-  width:50%;
   position: absolute;
   border:2px solid rgba(112, 112, 112, 0.2);
   border-radius: 10px;
   align-self: center;
   padding:20px;
-  
+  width:50%;
 }
-
+@media (max-width: 600px) {
+  .tile{
+    width:80%;
+  }
+  }
