@@ -9,13 +9,15 @@ class App extends Component {
       logged: false
     };
   }
-
+  loginUser = () =>{
+    this.setState({logged:true})
+  }
   render() {
     return (
       this.state.logged ?
       <Main />
       :
-      <Login />
+      <Login login={this.loginUser}/>
     );
   }
 }
