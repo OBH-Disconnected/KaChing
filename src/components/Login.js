@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './Login.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Form,Button } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
+
 
 class Login extends Component {
-  constructor(){
+  constructor() {
     super();
   }
-  handleSubmit = (event) =>{
+  handleSubmit = (event) => {
     event.preventDefault()
     console.log(event.target.value)
     this.props.login();
@@ -16,24 +17,20 @@ class Login extends Component {
     return (
       <div className='background'>
         <div className='tile'>
-        <Form>
-  <Form.Group controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
-
-  <Form.Group controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Button className='login-btn' variant="primary" type="submit">
-    Zaloguj
-  </Button>
-</Form>
-      </div>
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Group controlId="formLogin">
+              <Form.Label>Login</Form.Label>
+              <Form.Control type="text" placeholder="Enter login" required />
+            </Form.Group>
+            <Form.Group controlId="formPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" required />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Log In
+            </Button>
+          </Form>
+        </div>
       </div>
     );
   }
