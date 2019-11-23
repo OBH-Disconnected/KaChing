@@ -7,18 +7,24 @@ class Main extends Component {
     super()
     this.state={
       display: "none",
-      accountNumer: ""
+      accountNumber: ""
     }
   }
   changeDiv = () =>{
     this.setState({display:"block"})
   }
   changeAccount=(event)=>{
-    this.setState({accountNumer: event.target.value})
+    this.setState({accountNumber: event.target.value})
   }
   handleSubmit=(event)=>{
     event.preventDefault()
     this.setState({display:"none"})
+  }
+  closeForm =()=>{
+    this.setState({
+      accountNumber:"",
+      display:"none"
+    })
   }
   render() {
     return (
@@ -28,11 +34,12 @@ class Main extends Component {
         <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId="formLogin">
               <Form.Label>Account number</Form.Label>
-              <Form.Control type="text" placeholder="Enter account number" value={this.state.accountNumer} onChange={this.changeAccount} required />
+              <Form.Control type="text" placeholder="Enter account number" value={this.state.accountNumber} onChange={this.changeAccount} required />
             </Form.Group>
             <Button variant="primary" type="submit">
               Add
             </Button>
+            <Button onClick={this.closeForm}>Close</Button>
           </Form>
         </div>
       </div>
