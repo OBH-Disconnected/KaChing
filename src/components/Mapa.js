@@ -1,22 +1,30 @@
-import React, { Component } from 'react'
-import ReactMapboxGl, { Layer, Feature, Marker } from 'react-mapbox-gl';
+import React from 'react'
+import ReactMapboxGl, { Marker } from 'react-mapbox-gl';
 
 const Map = ReactMapboxGl({
   accessToken:
     'pk.eyJ1Ijoiam1vczEyMyIsImEiOiJjazNiaTRjcnEwbTJ5M2RrM2ZkZWxwazN0In0.IuK6kWPBjc8lq2nHbkw0QA'
 });
 
-class About extends React.Component {
+class Mapa extends React.Component {
   constructor() {
     super()
     this.state = {
       lng: 52.247012,
       lat: 21.062927,
       zoom: 1,
+      mapa: null
     }
-
   }
-    handleStyleLoad = map => (map.resize())
+  componentDidUpdate = () => {
+    if(this.state.mapa!=null)
+      this.state.mapa.resize()
+  };
+  
+  handleStyleLoad = (map) => {
+    this.setState({mapa:map})
+        map.resize()
+  }
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
@@ -28,7 +36,6 @@ class About extends React.Component {
           width: '100%'
         }}
         onStyleLoad={this.handleStyleLoad}
-        
         >
         <Marker
 		coordinates={[21.062927,52.247012]}
@@ -45,4 +52,4 @@ class About extends React.Component {
 }
 
 
-export default About;
+export default Mapa;

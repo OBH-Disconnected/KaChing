@@ -3,22 +3,24 @@ import { Form, Button } from 'react-bootstrap';
 import "./Main.css"
 import Mapa from "./Mapa"
 import Przelew from "./Mapa"
-import Subscription from "./Mapa"
+import Accounts from "./Accounts"
+import Subscription from "./Subscription"
+import { FaCalendarCheck,FaMoneyBillWave,
+FaMapMarkedAlt,FaUniversity,FaReceipt, FaPiggyBank,FaRegWindowClose
+ } from 'react-icons/fa';
 
 class Main extends Component {
   constructor(props){
     super(props)
     this.state={
-      display: "none",
-      accountNumber: "",
-      showMapa: "none"
+      showAccounts: "none",
+      showMapa: "none",
+      money: 24556.87,
+      showSubs:"none"
     }
   }
-  changeDiv = () =>{
-    this.setState({display:"block"})
-  }
-  changeAccount=(event)=>{
-    this.setState({accountNumber: event.target.value})
+  showAccounts = () =>{
+    this.setState({showAccounts:"block"})
   }
   handleSubmit=(event)=>{
     event.preventDefault()
@@ -26,8 +28,7 @@ class Main extends Component {
   }
   closeForm =()=>{
     this.setState({
-      accountNumber:"",
-      display:"none"
+      showAccounts:"none"
     })
   }
   showMap = () =>{
@@ -36,34 +37,37 @@ class Main extends Component {
   hideMap = () =>{
     this.setState({showMapa: "none"})
   }
+  showSubs = () =>{
+    this.setState({showSubs: "block"})
+  }
+  hideSubs = () =>{
+    this.setState({showSubs: "none"})
+  }
   render() {
     return (
       <div>
       <div className='row' style={{justifyContent: 'space-around'}}>
-        <Button className="tile2" onClick={this.showMap}>SUBSCRIPTIONS</Button>
-        <Button className="tile2" onClick={this.changeDiv}>YOUR ACCOUNT BALANCE</Button>
-        <Button className="tile2" onClick={this.showMap}>SHOW LOCATIONS</Button>
+        <Button className="tile2" onClick={this.showSubs}>SUBSCRIPTIONS <h1><FaCalendarCheck /></h1></Button>
+        <Button className="tile2" onClick={this.showAccounts}>
+        YOUR ACCOUNT BALANCE: <br/>{this.state.money} zł<h1><FaMoneyBillWave/></h1><b className="tile-desc">CLICK FOR DETAILS</b>
+        </Button>
+        <Button className="tile2" onClick={this.showMap}>SHOW LOCATIONS <h1><FaMapMarkedAlt/></h1></Button>
         </div>
         <div className="row" style={{justifyContent: 'space-around'}}>
-        <Button className="tile2" onClick={this.changeDiv}>TRANSFER MONEY</Button>
-        <Button className="tile2" onClick={this.changeDiv}>ADD RECEIPT</Button>
-        <Button className="tile2" onClick={this.changeDiv}>SAVE MONEY AUTOMATICLY</Button>
+        <Button className="tile2" onClick={this.changeDiv}>TRANSFER MONEY <h1><FaUniversity/></h1></Button>
+        <Button className="tile2" onClick={this.changeDiv}>ADD RECEIPT<h1><FaReceipt/></h1></Button>
+        <Button className="tile2" onClick={this.changeDiv}>SAVE MONEY AUTOMATICLY <h1><FaPiggyBank/></h1></Button>
         </div>
-        <div className="overlay" style={{display: this.state.display}}>
-        <Form onSubmit={this.handleSubmit}>
-            <Form.Group controlId="formLogin">
-              <Form.Label>Account number</Form.Label>
-              <Form.Control type="text" placeholder="Enter account number" value={this.state.accountNumber} onChange={this.changeAccount} required />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Add
-            </Button>
-            <Button onClick={this.closeForm}>Close</Button>
-          </Form>
+        <div className="overlay" style={{display: this.state.showAccounts}}>
+        <Accounts closeForm={this.closeForm}/>
         </div>
         <div className="overlay-mapa" style={{display: this.state.showMapa}}>
         <Button className="buttonmapa" onClick={this.hideMap}>Close</Button>
         <Mapa />
+        </div>
+        <div className="overlay-mapa" style={{display: this.state.showSubs}}>
+        <div className="close-btn" onClick={this.hideSubs}><FaRegWindowClose/></div>
+        <Subscription/>
         </div>
       </div>
     );

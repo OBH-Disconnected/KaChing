@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import './Login.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button } from 'react-bootstrap';
-
+import * as net from '../Net';
 
 class Login extends Component {
   constructor() {
     super();
     this.state={
       login:"",
-      password:""
+      password:"",
+      warning:""
     }
   }
   changeLogin = (event) =>{
@@ -18,30 +19,38 @@ class Login extends Component {
   changePassword = (event) =>{
     this.setState({password: event.target.value})
   }
-  handleSubmit = (event) => {
+  showWarning = ()=>{
+    this.setState({login:"",password:"",warning:"invalid credentials"})
+  }
+  handleSubmit = async(event) => {
     event.preventDefault()
-    this.state.login === "admin" && this.state.password==="admin"?
+    var credentials= await net.loginUser(this.state.login,this.state.password)
+    credentials ?
     this.props.login()
     :
-    console.log("nie")
+    this.showWarning()
   }
   render() {
     return (
       <div className='background'>
+      <div className="loginContainer">
+      <h1 className="loginTitle">KaChing</h1>
         <div  className='tile'>
           <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId="formLogin">
               <Form.Label>Login</Form.Label>
-              <Form.Control type="text" placeholder="Enter login" value={this.state.login} onChange={this.changeLogin} required />
+              <Form.Control className="login-input" type="text" placeholder="Enter login" value={this.state.login} onChange={this.changeLogin} required />
             </Form.Group>
             <Form.Group controlId="formPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" value={this.state.password} onChange={this.changePassword} required />
+              <Form.Control className="login-input" type="password" placeholder="Password" value={this.state.password} onChange={this.changePassword} required />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <p className="text-danger">{this.state.warning}</p>
+            <Button className="loginbtn" type="submit">
               Log In
             </Button>
           </Form>
+        </div>
         </div>
       </div>
     );

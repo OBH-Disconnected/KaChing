@@ -1,0 +1,11 @@
+.sub-row{
+    height: 80px;
+    display: flex;
+    align-items:center;
+    cursor: default;
+}
+.sub-item{
+    font-size: 25px;
+    display: flex;
+    flex:1
+}

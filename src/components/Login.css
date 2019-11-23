@@ -3,7 +3,6 @@ body{
   padding:0;
 }
 .background{
-  background: linear-gradient(90deg, rgba(28,234,176,1) 0%, rgba(25,118,210,1) 100%);
   width:100%;
   height: 100vh;
   display: flex;
@@ -12,15 +11,42 @@ body{
 
 .tile{
   background: #FAFAFA;
-  position: absolute;
   border:2px solid rgba(112, 112, 112, 0.2);
   border-radius: 10px;
-  align-self: center;
   padding:20px;
   width:50%;
+  box-shadow: 10px 10px 25px 0px rgba(112, 112, 112, 0.2);
+  margin: 0 auto;
+}
+.tile *{
+  text-align: left
 }
 @media (max-width: 600px) {
   .tile{
     width:80%;
   }
   }
+.login-input{
+  border: 2px solid !important;
+  border-image-source:linear-gradient(90deg, rgba(28,234,176,1) 0%, rgba(25,118,210,1) 100%) !important;
+  border-image-slice: 1 !important;
+}
+
+.loginbtn{
+  background-image: linear-gradient(90deg, rgba(28,234,176,1) 0%, rgba(25,118,210,1) 100%);
+  border: 0 !important;
+}
+.loginContainer{
+  align-self: center;
+    width: 100%;
+    text-align: center;
+}
+.loginTitle{
+  margin-bottom: 10px;
+  background:-webkit-linear-gradient(rgba(28,234,176,1),rgba(25,118,210,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 70px;
+  padding: 10px;
+  letter-spacing: 10px;
+}
