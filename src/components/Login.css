@@ -6,7 +6,19 @@ body{
   background: linear-gradient(90deg, rgba(28,234,176,1) 0%, rgba(25,118,210,1) 100%);
   width:100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 .tile{
   background: #FAFAFA;
+  width:50%;
+  position: absolute;
+  border:2px solid #707070;
+  border-radius: 10px;
+  align-self: center;
+  padding:20px;
+  
+}
+.login-btn{
+  background-color: red;
 }

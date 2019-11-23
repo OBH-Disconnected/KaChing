@@ -29,11 +29,8 @@ class Login extends Component {
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" placeholder="Password" />
   </Form.Group>
-  <Form.Group controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
+  <Button className='login-btn' variant="primary" type="submit">
+    Zaloguj
   </Button>
 </Form>
       </div>
