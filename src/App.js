@@ -11,6 +11,7 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+import {Navbar, Nav} from "react-bootstrap"
 
 class App extends Component {
   constructor(props) {
@@ -27,19 +28,11 @@ class App extends Component {
       this.state.logged ?
       <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Main</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
+      <Navbar bg="light" variant="light">
+              <Link to="/" className="nav-link">Main</Link>
+              <Link to="/about" className="nav-link">About</Link>
+              <Link to="/users" className="nav-link">Users</Link>
+        </Navbar>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
