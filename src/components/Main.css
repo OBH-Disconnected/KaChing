@@ -1,0 +1,90 @@
+body{
+  overflow: hidden;
+}
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 80%; /* Full width (cover the whole page) */
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    margin: 0 auto;
+    background: #FAFAFA;
+    border:2px solid rgba(112, 112, 112, 0.2);
+    border-radius: 10px;
+    padding:20px;
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 10px 10px 25px 0px rgba(112, 112, 112, 0.2);
+  }
+  .overlay-mapa {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 80%; /* Full width (cover the whole page) */
+    height: 80%; /* Full height (cover the whole page) */
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    margin: 0 auto;
+    background: #FAFAFA;
+    border:2px solid rgba(112, 112, 112, 0.2);
+    border-radius: 10px;
+    padding:20px;
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 10px 10px 25px 0px rgba(112, 112, 112, 0.2);
+  }
+  .buttonmapa{
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      z-index: 3;
+      background-image: linear-gradient(90deg, rgba(28,234,176,1) 0%, rgba(25,118,210,1) 100%);
+      border: 0;
+  
+  }
+  .tile2{
+
+    height: 250px;
+    width: 400px;
+    display: inline-block;
+    float: right;
+    margin-top: 20px;
+    box-shadow: 10px 10px 25px 0px rgba(112, 112, 112, 0.2);
+    background-color: #FAFAFA;
+    border: 2px solid rgba(112, 112, 112, 0.2);
+    color: rgba(112,112,112,1);
+    font-size: 24px;
+  }
+  .tile2:hover{
+    background-image: linear-gradient(90deg, rgba(28,234,176,1) 0%, rgba(25,118,210,1) 100%);
+    border: 0;
+  }
+  .flex-row{
+    height:300px;
+    justify-content: space-around;
+  }
+.tile-desc{
+    display: block;
+    margin-top: 30px;
+    font-size:18px;
+    font-weight: normal
+}
+.close-btn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.close-btn *{
+    width: 30px;
+    height: 30px;
+}
+.close-btn:hover{
+    color:red;
+}
