@@ -9,7 +9,7 @@ Funkcjonalności:
 - Kategoryzowanie transakcji na podstawie kodów MCC
 - Anulowanie subskrypcji podjętych Mastercardem
 
-Prezentacja [KaChing.pdf](https://github.com/OBH-Disconnected/KaChing/blob/master/KaChing%20-%20disconnected.pdf) 
+#Prezentacja [KaChing.pdf](https://github.com/OBH-Disconnected/KaChing/blob/master/KaChing%20-%20disconnected.pdf) 
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
