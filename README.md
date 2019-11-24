@@ -13,10 +13,18 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
+### `config file`
+./src/settings.js
+{
+address: "10.12.250.48", 
+    port: '3001',
+    token:''
+}
+
 
 ## screens:
-![KaChing Charts](https://github.com/OBH-Disconnected/KaChing/blob/master/screens/Charts.PNG)
-![KaChing Home](https://github.com/OBH-Disconnected/KaChing/blob/master/screens/Home.PNG)
-![KaChing Map](https://github.com/OBH-Disconnected/KaChing/blob/master/screens/Map.PNG)
 ![KaChing Login](https://github.com/OBH-Disconnected/KaChing/blob/master/screens/login.PNG)
+![KaChing Home](https://github.com/OBH-Disconnected/KaChing/blob/master/screens/Home.PNG)
+![KaChing Charts](https://github.com/OBH-Disconnected/KaChing/blob/master/screens/Charts.PNG)
+![KaChing Map](https://github.com/OBH-Disconnected/KaChing/blob/master/screens/Map.PNG)
 ![KaChing Subsctiptions](https://github.com/OBH-Disconnected/KaChing/blob/master/screens/subscriptions.PNG)
