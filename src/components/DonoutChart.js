@@ -7,16 +7,13 @@ class DonutChart extends React.Component {
 
       this.state = {
         options: {
-          labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          labels: ["FastFoods", "Gas", "Subscriptions", "Coffee ", "Rent"],
           theme: {
             monochrome: {
               enabled: true,
               color: '#1976d2',
               shadeTo: 'light',
             }
-          },
-          title: {
-            text: "When you spend the most?"
           },
           responsive: [{
             breakpoint: 480,
@@ -30,7 +27,7 @@ class DonutChart extends React.Component {
             }
           }]
         },
-        series: [25, 15, 44, 55, 41, 17],
+        series: [69, 150, 120, 60, 1000],
       }
     }
 

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactApexChart from "react-apexcharts";
 
 class RadialChart extends React.Component {
