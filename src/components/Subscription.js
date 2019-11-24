@@ -29,7 +29,7 @@ class Subscriptions extends Component {
     ]
     var this_binded=this
     var divs = subs.map(function (elem,i) {
-      return <SubscriptionComponent id={i} removeSubscription={this_binded.removeOne} name={elem.name} amount={elem.amount} date={elem.date} key={"subs"+i}/>
+      return <SubscriptionComponent text={"UNSUBSCRIBE"} id={i} removeSubscription={this_binded.removeOne} name={elem.name} amount={elem.amount} date={elem.date} key={"subs"+i}/>
     })
     this.setState({elements:divs})
   }
