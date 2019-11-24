@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Login from "./components/Login"
 import Main from "./components/Main";
 import About from "./components/About"
-import Users from "./components/Users"
+import Charts from "./components/Charts"
 import {
   BrowserRouter as Router,
   Switch,
@@ -37,7 +37,7 @@ class App extends Component {
       <Navbar bg="light" variant="light" className="main-nav">
               <Link to="/" className="nav-link navigation-item"><h1><FaHome/></h1>Home</Link>
               <Link to="/about" className="nav-link navigation-item"><h1><FaHandHoldingUsd/></h1>Goals</Link>
-              <Link to="/users"  className="nav-link navigation-item"><h1><FaChartLine/></h1>Results</Link>
+              <Link to="/charts"  className="nav-link navigation-item"><h1><FaChartLine/></h1>Results</Link>
               <Link to="/transactions"  className="nav-link navigation-item"><h1><FaCreditCard/></h1>Transactions</Link>
         </Navbar>
 
@@ -47,8 +47,8 @@ class App extends Component {
           <Route path="/about">
             <Main />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/charts">
+            <Charts />
           </Route>
           <Route path="/">
             <Main />
