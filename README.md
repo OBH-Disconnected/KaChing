@@ -1,3 +1,15 @@
+## Funkcjonalności:
+Funkcjonalności:
+•	Scentralizowanie kilku kont bankowych (domownicy/kilka kont w różnych bankach)
+•	Automatyczne oszczędzanie
+•	Cele
+•	Wyniki
+•	Popowiedzi dla użytkownika bazując na jego preferencjach i wyborach innych z tej samej grupy
+•	Przelewanie pieniędzy
+•	Kategoryzowanie transakcji na podstawie kodów MCC
+•	Anulowanie subskrypcji podjętych Mastercardem
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## How to run:
